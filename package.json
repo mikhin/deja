@@ -1,0 +1,61 @@
+{
+  "name": "deja",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "packageManager": "pnpm@10.30.3",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "format": "oxfmt --check .",
+    "format:fix": "oxfmt .",
+    "lint": "oxlint -c .oxlintrc.json --deny-warnings",
+    "lint:fix": "oxlint -c .oxlintrc.json --fix",
+    "typecheck": "tsc",
+    "test": "vitest run --coverage --passWithNoTests",
+    "mutation": "stryker run",
+    "mutation:changed": "stryker run --mutate \"$(node scripts/changed-mutants.mjs)\"",
+    "deadcode": "knip",
+    "dead-files": "node scripts/find-dead-code.mjs",
+    "dead-mocks": "node scripts/find-dead-mocks.mjs",
+    "dup": "jscpd",
+    "dup:top": "jscpd -r json -o reports/jscpd -t 100 -s && node scripts/jscpd-top.mjs",
+    "strip-comments": "node scripts/strip-comments.mjs",
+    "check": "pnpm format && pnpm lint && pnpm typecheck && pnpm test && pnpm deadcode && pnpm dead-files && pnpm dead-mocks && pnpm dup && pnpm run --if-present build",
+    "prepare": "simple-git-hooks"
+  },
+  "devDependencies": {
+    "@stryker-mutator/core": "^10.0.0",
+    "@stryker-mutator/vitest-runner": "^10.0.0",
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "@types/node": "^24.10.0",
+    "@vitest/coverage-v8": "^4.1.11",
+    "eslint-plugin-perfectionist": "^5.11.1",
+    "eslint-plugin-sonarjs": "^4.2.1",
+    "jscpd": "^5.3.0",
+    "knip": "^6.37.0",
+    "nano-staged": "^1.0.2",
+    "oxc-parser": "^0.151.0",
+    "oxfmt": "^0.69.0",
+    "oxlint": "^1.83.0",
+    "simple-git-hooks": "^2.14.0",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.11"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "simple-git-hooks"
+    ]
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm exec nano-staged"
+  },
+  "description": "Opens the past Claude Code session you talked about",
+  "bin": {
+    "deja": "./src/main.ts"
+  },
+  "imports": {
+    "#/*": "./src/*"
+  }
+}

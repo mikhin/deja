@@ -1,0 +1,9 @@
+{
+  "pattern": "{src,scripts}/**/*.{ts,tsx,mjs,cjs}",
+  "ignore": ["**/*.{test,spec}.{ts,tsx}", "**/fixtures/**", "**/node_modules/**"],
+  "minLines": 6,
+  "minTokens": 40,
+  "threshold": 0,
+  "reporters": ["console"],
+  "exitCode": 1
+}

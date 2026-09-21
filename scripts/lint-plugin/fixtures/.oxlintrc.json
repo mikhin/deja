@@ -1,0 +1,10 @@
+{
+  "jsPlugins": ["../index.cjs"],
+  "categories": { "correctness": "off" },
+  "rules": {
+    "local/no-comments": "error",
+    "local/one-function-export": "error",
+    "local/no-branching-exports": "error",
+    "local/no-classes": "error"
+  }
+}

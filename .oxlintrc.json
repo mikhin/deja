@@ -1,0 +1,44 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "extends": ["./.oxlintrc.base.json"],
+  "ignorePatterns": ["dist", "coverage", "reports", "presets", "scripts/lint-plugin/fixtures"],
+  "rules": {
+    "import/no-nodejs-modules": [
+      "error",
+      {
+        "allow": [
+          "node:child_process",
+          "node:fs",
+          "node:os",
+          "node:path",
+          "node:sqlite",
+          "node:process"
+        ]
+      }
+    ],
+    "no-use-before-define": [
+      "error",
+      {
+        "functions": false
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["src/main.ts", "src/cli/**"],
+      "rules": {
+        "no-console": "off",
+        "sonarjs/no-os-command-from-path": "off",
+        "eslint/max-statements": "off",
+        "eslint/max-lines-per-function": "off",
+        "eslint/complexity": "off",
+        "sonarjs/cognitive-complexity": "off",
+        "import/max-dependencies": "off",
+        "unicorn/no-process-exit": "off"
+      }
+    }
+  ],
+  "globals": {
+    "console": "readonly"
+  }
+}

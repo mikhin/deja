@@ -1,0 +1,594 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "unicorn", "oxc", "import", "promise"],
+  "jsPlugins": [
+    "@stylistic/eslint-plugin",
+    "eslint-plugin-sonarjs",
+    "eslint-plugin-perfectionist",
+    "./scripts/lint-plugin"
+  ],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "error",
+    "pedantic": "error",
+    "perf": "error",
+    "style": "error",
+    "restriction": "error",
+    "nursery": "error"
+  },
+  "env": {
+    "es2022": true,
+    "shared-node-browser": true
+  },
+  "rules": {
+    "typescript/no-explicit-any": "error",
+    "typescript/no-non-null-assertion": "error",
+    "typescript/consistent-type-definitions": ["error", "type"],
+    "typescript/explicit-module-boundary-types": "error",
+    "eslint/complexity": [
+      "error",
+      {
+        "max": 6
+      }
+    ],
+    "eslint/max-depth": [
+      "error",
+      {
+        "max": 2
+      }
+    ],
+    "eslint/max-params": [
+      "error",
+      {
+        "max": 3
+      }
+    ],
+    "eslint/max-lines": [
+      "error",
+      {
+        "max": 80,
+        "skipBlankLines": true
+      }
+    ],
+    "eslint/max-lines-per-function": [
+      "error",
+      {
+        "max": 25,
+        "skipBlankLines": true
+      }
+    ],
+    "eslint/no-magic-numbers": [
+      "error",
+      {
+        "ignore": [0, 1, 2, 3, -1]
+      }
+    ],
+    "eslint/curly": ["error", "multi-line"],
+    "eslint/no-duplicate-imports": [
+      "error",
+      {
+        "allowSeparateTypeImports": true
+      }
+    ],
+    "eslint/one-var": "off",
+    "eslint/func-style": "off",
+    "eslint/sort-imports": "off",
+    "eslint/sort-keys": "off",
+    "eslint/id-length": "off",
+    "eslint/no-plusplus": "off",
+    "eslint/no-ternary": "off",
+    "eslint/no-continue": "off",
+    "eslint/prefer-destructuring": "off",
+    "eslint/require-unicode-regexp": "off",
+    "eslint/prefer-named-capture-group": "off",
+    "oxc/no-optional-chaining": "off",
+    "unicorn/no-null": "off",
+    "import/exports-last": "off",
+    "import/no-cycle": "error",
+    "import/no-default-export": "error",
+    "import/no-named-export": "off",
+    "import/group-exports": "off",
+    "import/prefer-default-export": "off",
+    "oxc/no-barrel-file": [
+      "error",
+      {
+        "threshold": 0
+      }
+    ],
+    "unicorn/number-literal-case": "off",
+    "local/no-comments": "error",
+    "@stylistic/padding-line-between-statements": [
+      "error",
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": "*"
+      },
+      {
+        "blankLine": "any",
+        "prev": "import",
+        "next": "import"
+      },
+      {
+        "blankLine": "any",
+        "prev": "const",
+        "next": "const"
+      },
+      {
+        "blankLine": "any",
+        "prev": "let",
+        "next": "let"
+      },
+      {
+        "blankLine": "any",
+        "prev": "export",
+        "next": "export"
+      }
+    ],
+    "sonarjs/class-name": "error",
+    "sonarjs/no-fallthrough": "error",
+    "sonarjs/no-equals-in-for-termination": "error",
+    "sonarjs/no-extra-arguments": "error",
+    "sonarjs/no-labels": "error",
+    "sonarjs/no-nested-assignment": "error",
+    "sonarjs/no-redundant-boolean": "error",
+    "sonarjs/prefer-single-boolean-return": "error",
+    "sonarjs/unused-import": "error",
+    "sonarjs/fixme-tag": "error",
+    "sonarjs/no-case-label-in-switch": "error",
+    "sonarjs/no-parameter-reassignment": "error",
+    "sonarjs/prefer-while": "error",
+    "sonarjs/no-small-switch": "error",
+    "sonarjs/no-hardcoded-ip": "error",
+    "sonarjs/label-position": "error",
+    "sonarjs/public-static-readonly": "error",
+    "sonarjs/call-argument-line": "error",
+    "sonarjs/max-switch-cases": "error",
+    "sonarjs/no-unused-vars": "error",
+    "sonarjs/function-inside-loop": "error",
+    "sonarjs/code-eval": "error",
+    "sonarjs/future-reserved-words": "error",
+    "sonarjs/bitwise-operators": "error",
+    "sonarjs/no-primitive-wrappers": "error",
+    "sonarjs/no-skipped-tests": "error",
+    "sonarjs/no-identical-expressions": "error",
+    "sonarjs/constructor-for-side-effects": "error",
+    "sonarjs/no-dead-store": "error",
+    "sonarjs/no-identical-conditions": "error",
+    "sonarjs/no-duplicated-branches": "error",
+    "sonarjs/deprecation": "error",
+    "sonarjs/no-inverted-boolean-check": "error",
+    "sonarjs/misplaced-loop-counter": "error",
+    "sonarjs/no-nested-functions": "error",
+    "sonarjs/no-hardcoded-passwords": "error",
+    "sonarjs/sql-queries": "error",
+    "sonarjs/insecure-cookie": "error",
+    "sonarjs/no-useless-increment": "error",
+    "sonarjs/no-globals-shadowing": "error",
+    "sonarjs/no-empty-test-file": "error",
+    "sonarjs/no-ignored-return": "error",
+    "sonarjs/arguments-order": "error",
+    "sonarjs/for-loop-increment-sign": "error",
+    "sonarjs/null-dereference": "error",
+    "sonarjs/no-selector-parameter": "error",
+    "sonarjs/updated-loop-counter": "error",
+    "sonarjs/block-scoped-var": "error",
+    "sonarjs/no-ignored-exceptions": "error",
+    "sonarjs/no-gratuitous-expressions": "error",
+    "sonarjs/file-uploads": "error",
+    "sonarjs/file-permissions": "error",
+    "sonarjs/no-empty-character-class": "error",
+    "sonarjs/no-unenclosed-multiline-block": "error",
+    "sonarjs/index-of-compare-to-positive-number": "error",
+    "sonarjs/assertions-in-tests": "error",
+    "sonarjs/no-implicit-global": "error",
+    "sonarjs/no-useless-catch": "error",
+    "sonarjs/xml-parser-xxe": "error",
+    "sonarjs/non-existent-operator": "error",
+    "sonarjs/post-message": "error",
+    "sonarjs/no-array-delete": "error",
+    "sonarjs/no-alphabetical-sort": "error",
+    "sonarjs/no-incomplete-assertions": "error",
+    "sonarjs/no-global-this": "error",
+    "sonarjs/new-operator-misuse": "error",
+    "sonarjs/no-delete-var": "error",
+    "sonarjs/cookie-no-httponly": "error",
+    "sonarjs/different-types-comparison": "error",
+    "sonarjs/inverted-assertion-arguments": "error",
+    "sonarjs/updated-const-var": "error",
+    "sonarjs/no-invariant-returns": "error",
+    "sonarjs/generator-without-yield": "error",
+    "sonarjs/no-associative-arrays": "error",
+    "sonarjs/comma-or-logical-or-case": "error",
+    "sonarjs/no-redundant-jump": "error",
+    "sonarjs/inconsistent-function-call": "error",
+    "sonarjs/no-use-of-empty-return-value": "error",
+    "sonarjs/void-use": "error",
+    "sonarjs/cognitive-complexity": "error",
+    "sonarjs/argument-type": "error",
+    "sonarjs/in-operator-type-error": "error",
+    "sonarjs/array-callback-without-return": "error",
+    "sonarjs/function-return-type": "error",
+    "sonarjs/no-all-duplicated-branches": "error",
+    "sonarjs/no-same-line-conditional": "error",
+    "sonarjs/no-collection-size-mischeck": "error",
+    "sonarjs/no-unthrown-error": "error",
+    "sonarjs/no-unused-collection": "error",
+    "sonarjs/no-os-command-from-path": "error",
+    "sonarjs/no-misleading-array-reverse": "error",
+    "sonarjs/no-element-overwrite": "error",
+    "sonarjs/no-identical-functions": "error",
+    "sonarjs/no-empty-collection": "error",
+    "sonarjs/no-redundant-assignments": "error",
+    "sonarjs/prefer-type-guard": "error",
+    "sonarjs/use-type-alias": "error",
+    "sonarjs/no-useless-intersection": "error",
+    "sonarjs/weak-ssl": "error",
+    "sonarjs/no-weak-keys": "error",
+    "sonarjs/csrf": "error",
+    "sonarjs/production-debug": "error",
+    "sonarjs/prefer-default-last": "error",
+    "sonarjs/no-in-misuse": "error",
+    "sonarjs/no-duplicate-in-composite": "error",
+    "sonarjs/no-undefined-argument": "error",
+    "sonarjs/no-nested-template-literals": "error",
+    "sonarjs/prefer-promise-shorthand": "error",
+    "sonarjs/os-command": "error",
+    "sonarjs/no-redundant-optional": "error",
+    "sonarjs/hashing": "error",
+    "sonarjs/no-try-promise": "error",
+    "sonarjs/unverified-certificate": "error",
+    "sonarjs/no-unsafe-unzip": "error",
+    "sonarjs/cors": "error",
+    "sonarjs/link-with-target-blank": "error",
+    "sonarjs/disabled-auto-escaping": "error",
+    "sonarjs/table-header": "error",
+    "sonarjs/no-table-as-layout": "error",
+    "sonarjs/table-header-reference": "error",
+    "sonarjs/object-alt-content": "error",
+    "sonarjs/no-clear-text-protocols": "error",
+    "sonarjs/publicly-writable-directories": "error",
+    "sonarjs/unverified-hostname": "error",
+    "sonarjs/encryption-secure-mode": "error",
+    "sonarjs/no-weak-cipher": "error",
+    "sonarjs/no-intrusive-permissions": "error",
+    "sonarjs/insecure-jwt-token": "error",
+    "sonarjs/x-powered-by": "error",
+    "sonarjs/hidden-files": "error",
+    "sonarjs/content-length": "error",
+    "sonarjs/disabled-resource-integrity": "error",
+    "sonarjs/content-security-policy": "error",
+    "sonarjs/no-mixed-content": "error",
+    "sonarjs/frame-ancestors": "error",
+    "sonarjs/no-mime-sniff": "error",
+    "sonarjs/no-referrer-policy": "error",
+    "sonarjs/strict-transport-security": "error",
+    "sonarjs/confidential-information-logging": "error",
+    "sonarjs/no-ip-forward": "error",
+    "sonarjs/empty-string-repetition": "error",
+    "sonarjs/regex-complexity": "error",
+    "sonarjs/anchor-precedence": "error",
+    "sonarjs/slow-regex": "error",
+    "sonarjs/no-invalid-regexp": "error",
+    "sonarjs/unused-named-groups": "error",
+    "sonarjs/no-same-argument-assert": "error",
+    "sonarjs/no-misleading-character-class": "error",
+    "sonarjs/duplicates-in-character-class": "error",
+    "sonarjs/session-regeneration": "error",
+    "sonarjs/test-check-exception": "error",
+    "sonarjs/stable-tests": "error",
+    "sonarjs/no-empty-after-reluctant": "error",
+    "sonarjs/single-character-alternation": "error",
+    "sonarjs/no-code-after-done": "error",
+    "sonarjs/disabled-timeout": "error",
+    "sonarjs/chai-determinate-assertion": "error",
+    "sonarjs/aws-s3-bucket-insecure-http": "error",
+    "sonarjs/aws-s3-bucket-versioning": "error",
+    "sonarjs/aws-s3-bucket-granted-access": "error",
+    "sonarjs/no-angular-bypass-sanitization": "error",
+    "sonarjs/aws-iam-public-access": "error",
+    "sonarjs/aws-ec2-unencrypted-ebs-volume": "error",
+    "sonarjs/aws-s3-bucket-public-access": "error",
+    "sonarjs/aws-iam-all-privileges": "error",
+    "sonarjs/aws-rds-unencrypted-databases": "error",
+    "sonarjs/aws-opensearchservice-domain": "error",
+    "sonarjs/aws-iam-privilege-escalation": "error",
+    "sonarjs/aws-sagemaker-unencrypted-notebook": "error",
+    "sonarjs/no-empty-alternatives": "error",
+    "sonarjs/no-control-regex": "error",
+    "sonarjs/no-regex-spaces": "error",
+    "sonarjs/aws-sns-unencrypted-topics": "error",
+    "sonarjs/existing-groups": "error",
+    "sonarjs/aws-ec2-rds-dms-public": "error",
+    "sonarjs/aws-sqs-unencrypted-queue": "error",
+    "sonarjs/no-empty-group": "error",
+    "sonarjs/aws-efs-unencrypted": "error",
+    "sonarjs/aws-apigateway-public-api": "error",
+    "sonarjs/stateful-regex": "error",
+    "sonarjs/concise-regex": "error",
+    "sonarjs/single-char-in-character-classes": "error",
+    "sonarjs/no-hardcoded-secrets": "error",
+    "sonarjs/no-exclusive-tests": "error",
+    "sonarjs/jsx-no-leaked-render": "error",
+    "sonarjs/no-hook-setter-in-body": "error",
+    "sonarjs/no-useless-react-setstate": "error",
+    "sonarjs/no-uniq-key": "error",
+    "sonarjs/redundant-type-aliases": "error",
+    "sonarjs/prefer-regexp-exec": "error",
+    "sonarjs/no-internal-api-use": "error",
+    "sonarjs/prefer-read-only-props": "error",
+    "sonarjs/no-literal-call": "error",
+    "sonarjs/reduce-initial-value": "error",
+    "sonarjs/no-async-constructor": "error",
+    "perfectionist/sort-variable-declarations": [
+      "error",
+      {
+        "type": "natural",
+        "order": "asc"
+      }
+    ],
+    "perfectionist/sort-intersection-types": [
+      "error",
+      {
+        "type": "natural",
+        "order": "asc"
+      }
+    ],
+    "perfectionist/sort-heritage-clauses": [
+      "error",
+      {
+        "type": "natural",
+        "order": "asc"
+      }
+    ],
+    "perfectionist/sort-array-includes": [
+      "error",
+      {
+        "type": "natural",
+        "order": "asc"
+      }
+    ],
+    "perfectionist/sort-named-imports": [
+      "error",
+      {
+        "type": "natural",
+        "order": "asc"
+      }
+    ],
+    "perfectionist/sort-named-exports": [
+      "error",
+      {
+        "type": "natural",
+        "order": "asc"
+      }
+    ],
+    "perfectionist/sort-object-types": [
+      "error",
+      {
+        "type": "natural",
+        "order": "asc"
+      }
+    ],
+    "perfectionist/sort-union-types": [
+      "error",
+      {
+        "type": "natural",
+        "order": "asc"
+      }
+    ],
+    "perfectionist/sort-switch-case": [
+      "error",
+      {
+        "type": "natural",
+        "order": "asc"
+      }
+    ],
+    "perfectionist/sort-decorators": [
+      "error",
+      {
+        "type": "natural",
+        "order": "asc"
+      }
+    ],
+    "perfectionist/sort-interfaces": [
+      "error",
+      {
+        "type": "natural",
+        "order": "asc"
+      }
+    ],
+    "perfectionist/sort-jsx-props": [
+      "error",
+      {
+        "type": "natural",
+        "order": "asc"
+      }
+    ],
+    "perfectionist/sort-modules": [
+      "error",
+      {
+        "type": "natural",
+        "order": "asc"
+      }
+    ],
+    "perfectionist/sort-classes": [
+      "error",
+      {
+        "type": "natural",
+        "order": "asc"
+      }
+    ],
+    "perfectionist/sort-exports": [
+      "error",
+      {
+        "type": "natural",
+        "order": "asc"
+      }
+    ],
+    "perfectionist/sort-objects": [
+      "error",
+      {
+        "type": "natural",
+        "order": "asc"
+      }
+    ],
+    "perfectionist/sort-enums": [
+      "error",
+      {
+        "type": "natural",
+        "order": "asc"
+      }
+    ],
+    "perfectionist/sort-sets": [
+      "error",
+      {
+        "type": "natural",
+        "order": "asc"
+      }
+    ],
+    "perfectionist/sort-maps": [
+      "error",
+      {
+        "type": "natural",
+        "order": "asc"
+      }
+    ],
+    "eslint/no-undefined": "off",
+    "eslint/init-declarations": "off",
+    "oxc/no-rest-spread-properties": "off",
+    "oxc/no-map-spread": "off",
+    "unicorn/no-array-callback-reference": "off",
+    "unicorn/no-array-reduce": "off",
+    "import/no-relative-parent-imports": "off",
+    "import/unambiguous": "off",
+    "oxc/no-async-await": "off"
+  },
+  "overrides": [
+    {
+      "files": ["src/**/*.{test,spec}.{ts,tsx}", "scripts/**/*.{test,spec}.{ts,tsx}"],
+      "plugins": ["vitest"],
+      "rules": {
+        "eslint/no-magic-numbers": "off",
+        "eslint/max-lines": "off",
+        "eslint/max-lines-per-function": "off",
+        "@stylistic/padding-line-between-statements": "off",
+        "vitest/no-importing-vitest-globals": "off",
+        "vitest/prefer-expect-assertions": "off",
+        "vitest/require-test-timeout": "off",
+        "vitest/prefer-describe-function-title": "off",
+        "vitest/prefer-to-be-truthy": "off",
+        "vitest/prefer-to-be-falsy": "off",
+        "vitest/consistent-each-for": "error",
+        "vitest/consistent-test-it": "error",
+        "vitest/expect-expect": "error",
+        "vitest/hoisted-apis-on-top": "error",
+        "vitest/max-nested-describe": "error",
+        "vitest/no-alias-methods": "error",
+        "vitest/no-commented-out-tests": "error",
+        "vitest/no-conditional-expect": "error",
+        "vitest/no-conditional-tests": "error",
+        "vitest/no-disabled-tests": "error",
+        "vitest/no-duplicate-hooks": "error",
+        "vitest/no-focused-tests": "error",
+        "vitest/no-identical-title": "error",
+        "vitest/no-interpolation-in-snapshots": "error",
+        "vitest/no-large-snapshots": "error",
+        "vitest/no-mocks-import": "error",
+        "vitest/no-standalone-expect": "error",
+        "vitest/no-test-prefixes": "error",
+        "vitest/no-test-return-statement": "error",
+        "vitest/no-unneeded-async-expect-function": "error",
+        "vitest/prefer-called-with": "error",
+        "vitest/prefer-comparison-matcher": "error",
+        "vitest/prefer-each": "error",
+        "vitest/prefer-equality-matcher": "error",
+        "vitest/prefer-expect-resolves": "error",
+        "vitest/prefer-hooks-in-order": "error",
+        "vitest/prefer-hooks-on-top": "error",
+        "vitest/prefer-mock-promise-shorthand": "error",
+        "vitest/prefer-mock-return-shorthand": "error",
+        "vitest/prefer-spy-on": "error",
+        "vitest/prefer-to-be": "error",
+        "vitest/prefer-to-contain": "error",
+        "vitest/prefer-to-have-been-called-times": "error",
+        "vitest/prefer-to-have-length": "error",
+        "vitest/require-awaited-expect-poll": "error",
+        "vitest/require-local-test-context-for-concurrent-snapshots": "error",
+        "vitest/require-to-throw-message": "error",
+        "vitest/valid-describe-callback": "error",
+        "vitest/valid-expect": "error",
+        "vitest/valid-title": "error",
+        "vitest/no-conditional-in-test": "off",
+        "vitest/prefer-lowercase-title": "off",
+        "vitest/prefer-strict-equal": "off",
+        "vitest/require-mock-type-parameters": "off"
+      }
+    },
+    {
+      "files": ["*.config.{ts,mts,js,mjs}"],
+      "rules": {
+        "import/no-default-export": "off",
+        "import/no-nodejs-modules": "off"
+      },
+      "env": {
+        "node": true
+      }
+    },
+    {
+      "files": ["scripts/**"],
+      "env": {
+        "node": true
+      },
+      "rules": {
+        "eslint/no-console": "off",
+        "eslint/no-magic-numbers": "off",
+        "eslint/max-lines": [
+          "error",
+          {
+            "max": 250,
+            "skipBlankLines": true
+          }
+        ],
+        "eslint/max-lines-per-function": [
+          "error",
+          {
+            "max": 60,
+            "skipBlankLines": true
+          }
+        ],
+        "eslint/complexity": [
+          "error",
+          {
+            "max": 10
+          }
+        ],
+        "import/no-nodejs-modules": "off",
+        "import/no-commonjs": "off",
+        "unicorn/no-process-exit": "off",
+        "sonarjs/no-os-command-from-path": "off",
+        "eslint/max-statements": [
+          "error",
+          {
+            "max": 30
+          }
+        ],
+        "sonarjs/os-command": "off",
+        "sonarjs/regex-complexity": "off"
+      }
+    },
+    {
+      "files": ["**/*.d.ts"],
+      "rules": {
+        "typescript/consistent-type-definitions": "off"
+      }
+    },
+    {
+      "files": ["**/*.cjs"],
+      "rules": {
+        "typescript/no-require-imports": "off",
+        "typescript/no-var-requires": "off",
+        "import/no-commonjs": "off"
+      }
+    }
+  ]
+}
