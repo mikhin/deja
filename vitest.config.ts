@@ -5,7 +5,7 @@ process.env["TZ"] = "UTC";
 
 export default defineConfig({
   resolve: {
-    alias: { "#": path.resolve(import.meta.dirname, "src") },
+    alias: { "#src": path.resolve(import.meta.dirname, "src") },
   },
   test: {
     coverage: {

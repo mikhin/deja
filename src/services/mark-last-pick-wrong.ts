@@ -1,7 +1,7 @@
 import { writeFileSync } from "node:fs";
 
-import { readPicks } from "#/services/read-picks.ts";
-import type { Pick } from "#/types/pick.ts";
+import { readPicks } from "#src/services/read-picks.ts";
+import type { Pick } from "#src/types/pick.ts";
 
 export function markLastPickWrong(file: string): Pick | undefined {
   const picks = readPicks(file);

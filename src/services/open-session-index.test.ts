@@ -4,7 +4,7 @@ import path from "node:path";
 import { DatabaseSync } from "node:sqlite";
 import { describe, expect, it } from "vitest";
 
-import { openSessionIndex } from "#/services/open-session-index.ts";
+import { openSessionIndex } from "#src/services/open-session-index.ts";
 
 describe("openSessionIndex", () => {
   it("creates the tables a fresh index needs", () => {

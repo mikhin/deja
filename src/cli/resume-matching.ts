@@ -1,13 +1,13 @@
 import type { DatabaseSync } from "node:sqlite";
 import process from "node:process";
 
-import { chooseSession, FZF_MISSING } from "#/cli/choose-session.ts";
-import { openSession } from "#/cli/open-session.ts";
-import { printSessions } from "#/cli/print-sessions.ts";
-import { recordPick } from "#/cli/record-pick.ts";
-import { findSessions } from "#/services/find-sessions.ts";
-import { sortByRecency } from "#/services/sort-by-recency.ts";
-import { splitQueryTerms } from "#/services/split-query-terms.ts";
+import { chooseSession, FZF_MISSING } from "#src/cli/choose-session.ts";
+import { openSession } from "#src/cli/open-session.ts";
+import { printSessions } from "#src/cli/print-sessions.ts";
+import { recordPick } from "#src/cli/record-pick.ts";
+import { findSessions } from "#src/services/find-sessions.ts";
+import { sortByRecency } from "#src/services/sort-by-recency.ts";
+import { splitQueryTerms } from "#src/services/split-query-terms.ts";
 
 const CANDIDATES = 20;
 const FAILURE = 1;

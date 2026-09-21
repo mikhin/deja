@@ -1,11 +1,11 @@
 import type { DatabaseSync } from "node:sqlite";
 
-import { countMatchingTranscripts } from "#/services/count-matching-transcripts.ts";
-import { dropMostCommonTerm } from "#/services/drop-most-common-term.ts";
-import { shortenTermToKnownPrefix } from "#/services/shorten-term-to-known-prefix.ts";
-import { shortenTermWithAlternateForms } from "#/services/shorten-term-with-alternate-forms.ts";
-import { splitQueryTerms } from "#/services/split-query-terms.ts";
-import type { SessionHit } from "#/types/session.ts";
+import { countMatchingTranscripts } from "#src/services/count-matching-transcripts.ts";
+import { dropMostCommonTerm } from "#src/services/drop-most-common-term.ts";
+import { shortenTermToKnownPrefix } from "#src/services/shorten-term-to-known-prefix.ts";
+import { shortenTermWithAlternateForms } from "#src/services/shorten-term-with-alternate-forms.ts";
+import { splitQueryTerms } from "#src/services/split-query-terms.ts";
+import type { SessionHit } from "#src/types/session.ts";
 
 const SHORTEST_PREFIX = 3;
 const TITLE_WEIGHT = 10;

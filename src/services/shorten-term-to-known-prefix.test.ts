@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { shortenTermToKnownPrefix } from "#/services/shorten-term-to-known-prefix.ts";
+import { shortenTermToKnownPrefix } from "#src/services/shorten-term-to-known-prefix.ts";
 
 const corpus =
   (known: string[]) =>

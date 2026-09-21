@@ -1,4 +1,4 @@
-import { isPlainObject } from "#/services/is-plain-object.ts";
+import { isPlainObject } from "#src/services/is-plain-object.ts";
 
 export function collectTextBlocks(content: unknown): string[] {
   if (typeof content === "string") return [content];

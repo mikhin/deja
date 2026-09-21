@@ -1,6 +1,6 @@
-import { collectTextBlocks } from "#/services/collect-text-blocks.ts";
-import { extractSlashCommandArguments } from "#/services/extract-slash-command-arguments.ts";
-import { isPlainObject } from "#/services/is-plain-object.ts";
+import { collectTextBlocks } from "#src/services/collect-text-blocks.ts";
+import { extractSlashCommandArguments } from "#src/services/extract-slash-command-arguments.ts";
+import { isPlainObject } from "#src/services/is-plain-object.ts";
 
 const WRITTEN_BY_TOOLING =
   /^(<(command-message|command-name|local-command|system-reminder|user-memory|bash-)|Base directory for this skill:|Caveat: )/;

@@ -3,8 +3,8 @@ import { tmpdir } from "node:os";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 
-import { openSessionIndex } from "#/services/open-session-index.ts";
-import { syncSessionIndex } from "#/services/sync-session-index.ts";
+import { openSessionIndex } from "#src/services/open-session-index.ts";
+import { syncSessionIndex } from "#src/services/sync-session-index.ts";
 
 const writeTranscript = (
   root: string,

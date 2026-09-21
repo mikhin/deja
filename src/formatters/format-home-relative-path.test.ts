@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { formatHomeRelativePath } from "#/formatters/format-home-relative-path.ts";
+import { formatHomeRelativePath } from "#src/formatters/format-home-relative-path.ts";
 
 describe("formatHomeRelativePath", () => {
   it("replaces the home prefix with a tilde", () => {

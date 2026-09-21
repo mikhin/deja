@@ -37,6 +37,21 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm test
 
+  cli:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: ["24.0", "24", "25"]
+    steps:
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v5
+      - uses: actions/setup-node@v6
+        with: { node-version: "${{ matrix.node }}", cache: pnpm }
+      - run: pnpm install --frozen-lockfile
+      - run: node scripts/seed-demo.mjs
+      - run: HOME=$PWD/.demo-home node src/main.ts --reindex
+      - run: HOME=$PWD/.demo-home node src/main.ts -l recipe
+
   hygiene:
     runs-on: ubuntu-latest
     steps:

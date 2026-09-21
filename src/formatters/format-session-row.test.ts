@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
-import { formatSessionRow } from "#/formatters/format-session-row.ts";
-import type { SessionHit } from "#/types/session.ts";
+import { formatSessionRow } from "#src/formatters/format-session-row.ts";
+import type { SessionHit } from "#src/types/session.ts";
 
 const hit = (fields: Partial<SessionHit>): SessionHit => ({
   cwd: "/Users/me/Code/fuel-bot",

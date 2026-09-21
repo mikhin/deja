@@ -3,7 +3,7 @@ import { tmpdir } from "node:os";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 
-import { readPicks } from "#/services/read-picks.ts";
+import { readPicks } from "#src/services/read-picks.ts";
 
 const logOf = (lines: string[]): string => {
   const directory = mkdtempSync(path.join(tmpdir(), "deja-picks-"));

@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
-import { summarizePicks } from "#/services/summarize-picks.ts";
-import type { Pick, PickOutcome } from "#/types/pick.ts";
+import { summarizePicks } from "#src/services/summarize-picks.ts";
+import type { Pick, PickOutcome } from "#src/types/pick.ts";
 
 const pick = (outcome: PickOutcome, query: string, listPosition?: number): Pick => ({
   at: "2026-09-21T00:00:00.000Z",

@@ -56,6 +56,6 @@
     "deja": "./src/main.ts"
   },
   "imports": {
-    "#/*": "./src/*"
+    "#src/*": "./src/*"
   }
 }

@@ -3,7 +3,7 @@ import { tmpdir } from "node:os";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 
-import { parseSessionFile } from "#/services/parse-session-file.ts";
+import { parseSessionFile } from "#src/services/parse-session-file.ts";
 
 const transcript = (lines: unknown[]): string => {
   const directory = mkdtempSync(path.join(tmpdir(), "deja-"));

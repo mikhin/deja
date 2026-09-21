@@ -1,4 +1,4 @@
-import type { SessionHit } from "#/types/session.ts";
+import type { SessionHit } from "#src/types/session.ts";
 
 const DATE_LENGTH = 10;
 const PROJECT_WIDTH = 22;

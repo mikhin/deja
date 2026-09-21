@@ -1,8 +1,8 @@
 import type { DatabaseSync, StatementSync } from "node:sqlite";
 import { statSync } from "node:fs";
 
-import { listTranscriptFiles } from "#/services/list-transcript-files.ts";
-import { parseSessionFile } from "#/services/parse-session-file.ts";
+import { listTranscriptFiles } from "#src/services/list-transcript-files.ts";
+import { parseSessionFile } from "#src/services/parse-session-file.ts";
 
 type Statements = {
   forgetSession: StatementSync;

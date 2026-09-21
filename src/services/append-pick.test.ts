@@ -3,9 +3,9 @@ import { tmpdir } from "node:os";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 
-import { appendPick } from "#/services/append-pick.ts";
-import { readPicks } from "#/services/read-picks.ts";
-import type { Pick } from "#/types/pick.ts";
+import { appendPick } from "#src/services/append-pick.ts";
+import { readPicks } from "#src/services/read-picks.ts";
+import type { Pick } from "#src/types/pick.ts";
 
 const pick = (query: string): Pick => ({ at: "", outcome: "auto", query });
 

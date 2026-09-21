@@ -2,15 +2,15 @@
 import { mkdirSync } from "node:fs";
 import process from "node:process";
 
-import { CACHE, INDEX_FILE, PICKS_FILE, TRANSCRIPTS } from "#/cli/paths.ts";
-import { resumeMatching } from "#/cli/resume-matching.ts";
-import { resumeRecent } from "#/cli/resume-recent.ts";
-import { formatPickSummary } from "#/formatters/format-pick-summary.ts";
-import { markLastPickWrong } from "#/services/mark-last-pick-wrong.ts";
-import { openSessionIndex } from "#/services/open-session-index.ts";
-import { readPicks } from "#/services/read-picks.ts";
-import { summarizePicks } from "#/services/summarize-picks.ts";
-import { syncSessionIndex } from "#/services/sync-session-index.ts";
+import { CACHE, INDEX_FILE, PICKS_FILE, TRANSCRIPTS } from "#src/cli/paths.ts";
+import { resumeMatching } from "#src/cli/resume-matching.ts";
+import { resumeRecent } from "#src/cli/resume-recent.ts";
+import { formatPickSummary } from "#src/formatters/format-pick-summary.ts";
+import { markLastPickWrong } from "#src/services/mark-last-pick-wrong.ts";
+import { openSessionIndex } from "#src/services/open-session-index.ts";
+import { readPicks } from "#src/services/read-picks.ts";
+import { summarizePicks } from "#src/services/summarize-picks.ts";
+import { syncSessionIndex } from "#src/services/sync-session-index.ts";
 
 function run(): never {
   mkdirSync(CACHE, { recursive: true });

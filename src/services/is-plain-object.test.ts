@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { isPlainObject } from "#/services/is-plain-object.ts";
+import { isPlainObject } from "#src/services/is-plain-object.ts";
 
 describe("isPlainObject", () => {
   it("accepts an object with keys", () => {

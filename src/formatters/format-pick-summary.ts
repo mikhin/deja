@@ -1,5 +1,5 @@
-import { formatPercent } from "#/formatters/format-percent.ts";
-import type { PickSummary } from "#/types/pick.ts";
+import { formatPercent } from "#src/formatters/format-percent.ts";
+import type { PickSummary } from "#src/types/pick.ts";
 
 const RECENT_UNRESOLVED = 10;
 

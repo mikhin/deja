@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { shortenTermWithAlternateForms } from "#/services/shorten-term-with-alternate-forms.ts";
+import { shortenTermWithAlternateForms } from "#src/services/shorten-term-with-alternate-forms.ts";
 
 const documents: Record<string, number> = {
   answer: 5,

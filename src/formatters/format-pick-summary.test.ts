@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
-import { formatPickSummary } from "#/formatters/format-pick-summary.ts";
-import type { PickSummary } from "#/types/pick.ts";
+import { formatPickSummary } from "#src/formatters/format-pick-summary.ts";
+import type { PickSummary } from "#src/types/pick.ts";
 
 const summary = (fields: Partial<PickSummary>): PickSummary => ({
   abandonedShare: 0,

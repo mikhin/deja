@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 
-import { parsePickLine } from "#/services/parse-pick-line.ts";
-import type { Pick } from "#/types/pick.ts";
+import { parsePickLine } from "#src/services/parse-pick-line.ts";
+import type { Pick } from "#src/types/pick.ts";
 
 export function readPicks(file: string): Pick[] {
   let contents: string;

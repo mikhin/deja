@@ -1,8 +1,8 @@
 import type { DatabaseSync } from "node:sqlite";
 import { describe, expect, it } from "vitest";
 
-import { findSessions } from "#/services/find-sessions.ts";
-import { openSessionIndex } from "#/services/open-session-index.ts";
+import { findSessions } from "#src/services/find-sessions.ts";
+import { openSessionIndex } from "#src/services/open-session-index.ts";
 
 type Seed = { body: string; sessionId: string; title: string };
 

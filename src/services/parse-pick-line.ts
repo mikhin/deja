@@ -1,6 +1,6 @@
-import { isPlainObject } from "#/services/is-plain-object.ts";
-import { parseJsonLine } from "#/services/parse-json-line.ts";
-import type { Pick, PickOutcome } from "#/types/pick.ts";
+import { isPlainObject } from "#src/services/is-plain-object.ts";
+import { parseJsonLine } from "#src/services/parse-json-line.ts";
+import type { Pick, PickOutcome } from "#src/types/pick.ts";
 
 const OUTCOMES: PickOutcome[] = ["abandoned", "auto", "miss", "picked", "wrong"];
 

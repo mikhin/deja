@@ -1,4 +1,4 @@
-import type { Pick, PickSummary } from "#/types/pick.ts";
+import type { Pick, PickSummary } from "#src/types/pick.ts";
 
 const NEWEST = 1;
 const LISTED_DEEP = 3;

@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
-import { sortByRecency } from "#/services/sort-by-recency.ts";
-import type { SessionHit } from "#/types/session.ts";
+import { sortByRecency } from "#src/services/sort-by-recency.ts";
+import type { SessionHit } from "#src/types/session.ts";
 
 const hit = (sessionId: string, modifiedAt: number, score: number): SessionHit => ({
   cwd: "/p",

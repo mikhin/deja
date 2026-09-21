@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { splitQueryTerms } from "#/services/split-query-terms.ts";
+import { splitQueryTerms } from "#src/services/split-query-terms.ts";
 
 describe("splitQueryTerms", () => {
   it("lowercases words and drops punctuation", () => {

@@ -2,8 +2,8 @@ import { spawnSync } from "node:child_process";
 import { homedir } from "node:os";
 import process from "node:process";
 
-import { formatHomeRelativePath } from "#/formatters/format-home-relative-path.ts";
-import type { SessionHit } from "#/types/session.ts";
+import { formatHomeRelativePath } from "#src/formatters/format-home-relative-path.ts";
+import type { SessionHit } from "#src/types/session.ts";
 
 const MISSING_DIRECTORY = 1;
 

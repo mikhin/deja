@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { extractUserMessages } from "#/services/extract-user-messages.ts";
+import { extractUserMessages } from "#src/services/extract-user-messages.ts";
 
 const userLine = (content: unknown): Record<string, unknown> => ({
   cwd: "/p",

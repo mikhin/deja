@@ -1,6 +1,6 @@
 import { appendFileSync } from "node:fs";
 
-import type { Pick } from "#/types/pick.ts";
+import type { Pick } from "#src/types/pick.ts";
 
 export function appendPick(file: string, pick: Pick): boolean {
   try {

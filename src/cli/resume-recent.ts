@@ -1,10 +1,10 @@
 import type { DatabaseSync } from "node:sqlite";
 import process from "node:process";
 
-import { chooseSession, FZF_MISSING } from "#/cli/choose-session.ts";
-import { openSession } from "#/cli/open-session.ts";
-import { printSessions } from "#/cli/print-sessions.ts";
-import type { SessionHit } from "#/types/session.ts";
+import { chooseSession, FZF_MISSING } from "#src/cli/choose-session.ts";
+import { openSession } from "#src/cli/open-session.ts";
+import { printSessions } from "#src/cli/print-sessions.ts";
+import type { SessionHit } from "#src/types/session.ts";
 
 const RECENT_SESSIONS = 30;
 

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { extractSlashCommandArguments } from "#/services/extract-slash-command-arguments.ts";
+import { extractSlashCommandArguments } from "#src/services/extract-slash-command-arguments.ts";
 
 describe("extractSlashCommandArguments", () => {
   it("takes what the user typed after the command name", () => {

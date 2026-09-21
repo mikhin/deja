@@ -1,9 +1,9 @@
 import { readFileSync } from "node:fs";
 
-import { extractUserMessages } from "#/services/extract-user-messages.ts";
-import { isPlainObject } from "#/services/is-plain-object.ts";
-import { parseJsonLine } from "#/services/parse-json-line.ts";
-import type { SessionContent } from "#/types/session.ts";
+import { extractUserMessages } from "#src/services/extract-user-messages.ts";
+import { isPlainObject } from "#src/services/is-plain-object.ts";
+import { parseJsonLine } from "#src/services/parse-json-line.ts";
+import type { SessionContent } from "#src/types/session.ts";
 
 const TITLE_FROM_FIRST_MESSAGE = 120;
 

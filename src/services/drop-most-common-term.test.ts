@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { dropMostCommonTerm } from "#/services/drop-most-common-term.ts";
+import { dropMostCommonTerm } from "#src/services/drop-most-common-term.ts";
 
 const documents: Record<string, number> = { monitoring: 1, session: 120, telegram: 0 };
 
