@@ -7,7 +7,7 @@ import { shortenTermWithAlternateForms } from "#/services/shorten-term-with-alte
 import { splitQueryTerms } from "#/services/split-query-terms.ts";
 import type { SessionHit } from "#/types/session.ts";
 
-const SHORTEST_PREFIX = 4;
+const SHORTEST_PREFIX = 3;
 const TITLE_WEIGHT = 10;
 const BODY_WEIGHT = 1;
 

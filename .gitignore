@@ -18,3 +18,4 @@ CLAUDE.local.md
 /playwright-report/
 /test-results/
 /playwright/.cache/
+.demo-home

@@ -1,12 +1,22 @@
 import { spawnSync } from "node:child_process";
+import { homedir } from "node:os";
 import process from "node:process";
 
+import { formatHomeRelativePath } from "#/formatters/format-home-relative-path.ts";
 import type { SessionHit } from "#/types/session.ts";
 
-export function openSession(hit: SessionHit): never {
-  console.error(`→ ${hit.title}  (${hit.cwd})`);
+const MISSING_DIRECTORY = 1;
 
-  process.chdir(hit.cwd);
+export function openSession(hit: SessionHit): never {
+  console.error(`→ ${hit.title}  (${formatHomeRelativePath(hit.cwd, homedir())})`);
+
+  try {
+    process.chdir(hit.cwd);
+  } catch {
+    console.error(`its directory is gone, resume it yourself: claude --resume ${hit.sessionId}`);
+
+    process.exit(MISSING_DIRECTORY);
+  }
 
   const claude = spawnSync("claude", ["--resume", hit.sessionId], { stdio: "inherit" });
 

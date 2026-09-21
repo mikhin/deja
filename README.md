@@ -2,6 +2,8 @@
 
 Opens the past Claude Code session you talked about.
 
+![deja finds four sessions about recipes and resumes the one you pick](demo/deja.gif)
+
 ```
 deja cake recipe      # one session — opened; several — an fzf list, newest first
 deja                  # the 30 most recent sessions
@@ -30,3 +32,6 @@ No runtime dependencies: Node 24 (`node:sqlite`, native TypeScript) and `fzf` fo
 pnpm install && pnpm link --global
 pnpm check
 ```
+
+The recording above runs against a synthetic home built by `scripts/seed-demo.mjs`, so no real
+session appears in it. Rebuild it with `demo/make.sh` (needs `agg` and `python3`).

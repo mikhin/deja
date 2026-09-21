@@ -43,7 +43,7 @@ describe("findSessions", () => {
     expect(found.terms).toEqual(["watchdog", "result"]);
   });
 
-  it("drops the most common word instead of matching everything it touches", () => {
+  it("ignores a word the corpus never mentions and searches on the rest", () => {
     const database = indexOf([
       { body: "a bot about a bank card", sessionId: "card", title: "Card chat" },
       { body: "bot monitoring empty answers", sessionId: "wd", title: "Watchdog" },
@@ -52,7 +52,19 @@ describe("findSessions", () => {
     const found = findSessions(database, "telegram bot monitoring", 5);
 
     expect(found.hits.map((hit) => hit.sessionId)).toEqual(["wd"]);
-    expect(found.terms).toEqual(["monitoring"]);
+    expect(found.terms).toEqual(["bot", "monitoring"]);
+  });
+
+  it("finds a three-letter word, the shortest a trigram index can match", () => {
+    const database = indexOf([
+      { body: "the ads api returns quota errors", sessionId: "quota", title: "Ads API" },
+      { body: "the honey cake layers came out dry", sessionId: "cake", title: "Honey cake" },
+    ]);
+
+    const found = findSessions(database, "ads", 5);
+
+    expect(found.hits.map((hit) => hit.sessionId)).toEqual(["quota"]);
+    expect(found.terms).toEqual(["ads"]);
   });
 
   it("drops one of two words that never appear in the same session", () => {
