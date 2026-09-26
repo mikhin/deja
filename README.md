@@ -26,7 +26,13 @@ Every run appends its outcome to `~/.cache/deja/picks.jsonl`, and `deja --stats`
 into a failure rate. An automatic jump that opened the wrong session looks like a success in
 the log — only you can tell it apart, with `deja --wrong`.
 
-No runtime dependencies: Node 24 (`node:sqlite`, native TypeScript) and `fzf` for the list.
+No runtime dependencies: Node 24 (`node:sqlite`) and `fzf` for the list.
+
+```
+pnpm add -g github:mikhin/deja --allow-build=deja
+```
+
+`--allow-build` lets `prepare` compile `dist`, the only thing the binary runs. Development:
 
 ```
 pnpm install && pnpm link --global

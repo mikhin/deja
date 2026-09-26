@@ -22,8 +22,9 @@
     "dup": "jscpd",
     "dup:top": "jscpd -r json -o reports/jscpd -t 100 -s && node scripts/jscpd-top.mjs",
     "strip-comments": "node scripts/strip-comments.mjs",
+    "build": "tsc -p tsconfig.build.json",
     "check": "pnpm format && pnpm lint && pnpm typecheck && pnpm test && pnpm deadcode && pnpm dead-files && pnpm dead-mocks && pnpm dup && pnpm run --if-present build",
-    "prepare": "simple-git-hooks"
+    "prepare": "simple-git-hooks && pnpm build"
   },
   "devDependencies": {
     "@stryker-mutator/core": "^10.0.0",
@@ -53,9 +54,12 @@
   },
   "description": "Opens the past Claude Code session you talked about",
   "bin": {
-    "deja": "./src/main.ts"
+    "deja": "./dist/main.js"
   },
+  "files": [
+    "dist"
+  ],
   "imports": {
-    "#src/*": "./src/*"
+    "#src/*.ts": "./dist/*.js"
   }
 }

@@ -7,8 +7,10 @@ A CLI that opens the past Claude Code session you talked about.
 - Logic in `/services`, one exported function per file; `/formatters` render, `/cli` runs the process
 - `/cli` and `src/main.ts` are excluded from coverage: they only print, `process.exit` and `spawnSync`
 - Functional style, no classes
-- Imports go through `#/*` (Node subpath imports): the binary runs `src/main.ts` directly with no
-  build step, and Node does not read `tsconfig` path aliases
+- Imports go through `#src/*.ts` (Node subpath imports, mapped to `dist/*.js`): Node refuses to
+  strip types under `node_modules`, so the binary is `dist/main.js`, built by `pnpm build` on
+  `prepare`; typecheck and tests read `src` through the alias, so a code change needs `pnpm build`
+  before the linked `deja` sees it
 - No re-export barrels; import from the file that defines the thing
 
 ## TypeScript
